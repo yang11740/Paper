@@ -2,7 +2,7 @@
 
 本项目包含两个核心部分：
 1. **原论文复现**：复现 CVPR 2024 论文《ODM: A Text-Image Further Alignment Pre-training Approach for Scene Text Detection and Spotting》。
-2. **改进应用实验**：将 ODM 架构应用于**中文手写文本行（HTR）**领域，利用古典文学语料（《脂砚斋评石头记》）进行预训练改进，并在 CASIA-HWDB 数据集上进行验证。
+2. **改进应用实验**：将 ODM 架构应用于**中文手写文本行（HTR）**领域，利用古典文学语料（《红楼梦》）进行预训练改进，并在 CASIA-HWDB 数据集上进行验证。
 
 ---
 
@@ -56,7 +56,7 @@ python tools/train.py configs/textdet/dbnetpp/dbnetpp_resnet50-dcnv2_fpnc_1200e_
 ## 第二阶段：改进应用实验 (中文手写体识别)
 
 ### A. 数据合成
-1.  **语料处理**：运行 `extract_casia_dict.py` 提取《脂砚斋重评石头记.txt》中的去重汉字，生成 `chinese_dict.txt`。
+1.  **语料处理**：运行 `extract_casia_dict.py` 提取 “红楼梦.txt” 中的去重汉字，生成 `chinese_dict.txt`。
 2.  **数据合成**：使用手写字体库渲染语料，生成 5 万张图片对。
     *   **Input**: 手写样式图。
     *   **GT**: 标准宋体二值掩码图。
